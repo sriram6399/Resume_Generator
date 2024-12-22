@@ -1,0 +1,25 @@
+{
+  "name": "resume_generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"npm run dev --prefix backend\" \"npm start --prefix frontend/resume-generator-frontend\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sriram6399/Resume_Generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/sriram6399/Resume_Generator/issues"
+  },
+  "homepage": "https://github.com/sriram6399/Resume_Generator#readme",
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
