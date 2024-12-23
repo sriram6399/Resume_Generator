@@ -1,0 +1,60 @@
+/* Full-page background container */
+.background-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: url('../../public/background.png'); /* Ensure this image is in the public folder */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Login container styles */
+.login-container {
+  max-width: 400px;
+  padding: 30px;
+  background-color: #385c6d;
+   /* Makes the login form stand out */
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0.75; /* Slight transparency for aesthetics */
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-button {
+  width: 100%;
+  padding: 11px;
+  background-color:#000;
+  color:#f11a1a;
+  border: none;
+  border-radius: 13px;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background-color: #0f0f0c;
+}

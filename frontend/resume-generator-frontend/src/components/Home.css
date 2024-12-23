@@ -1,0 +1,113 @@
+/* General container styles */
+.home-container {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Navigation bar styling */
+  .nav-bar {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 2px solid #0056b3;
+    transition: height 0.3s ease-in-out, background-color 0.3s;
+    height: 50px; /* Initial height */
+    overflow: hidden; /* Prevent content spilling */
+    display: flex;
+    flex-direction: column; /* Stack heading and button vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center;
+  }
+  
+  .nav-bar:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Expanded navbar */
+  .nav-bar.expanded {
+    height: 150px; /* Expanded height */
+  }
+  
+  /* Personal Info button inside the navbar */
+  .nav-bar .personal-info-button {
+    background-color: transparent; /* Remove the boxy background */
+  border: none; /* Remove border */
+  color: azure; /* Keep it white for the navbar */
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer; /* Keep the pointer cursor to indicate clickability */
+  text-decoration: underline; /* Optional: Add underline to make it look like a link */
+  transition: color 0.3s ease;
+  }
+  
+  .nav-bar.expanded .personal-info-button {
+    display: block; /* Show the button when expanded */
+  }
+  
+  .nav-bar .personal-info-button:hover {
+    color: rgb(211, 221, 221); /* Change color on hover to indicate interactivity */
+  text-decoration: none; 
+  }
+  
+  /* Content area below navbar */
+  .expandable-content {
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  /* Form container styling */
+  .form-container {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    max-width: 500px;
+    margin: 20px auto; /* Center the form */
+  }
+  
+  /* Form input styles */
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  textarea {
+    resize: none;
+    height: 100px;
+  }
+  
+  .submit-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .submit-button:hover {
+    background-color: #0056b3;
+  }
+  
