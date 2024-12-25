@@ -2,13 +2,7 @@ import React, { useState } from 'react';
 import './Home.css';
 
 const Home = () => {
-  const [isNavbarExpanded, setIsNavbarExpanded] = useState(false); // Controls navbar dropdown
   const [isFormVisible, setIsFormVisible] = useState(false); // Controls form visibility
-
-  // Toggle Navbar Dropdown
-  const toggleNavbar = () => {
-    setIsNavbarExpanded(!isNavbarExpanded);
-  };
 
   // Toggle Form Visibility
   const toggleForm = () => {
@@ -18,16 +12,14 @@ const Home = () => {
   return (
     <div className="home-container">
       {/* Navbar */}
-      <div
-        className={`nav-bar ${isNavbarExpanded ? 'expanded' : ''}`}
-        onClick={toggleNavbar}
-      >
-        Welcome to Resume Builder Hub
-        {isNavbarExpanded && (
+      <div className="nav-bar">
+        <div className="nav-bar-content">
+          Welcome to Resume Builder Hub
+         
           <button className="personal-info-button" onClick={toggleForm}>
             Personal Info
           </button>
-        )}
+        </div>
       </div>
 
       {/* Form Section */}
