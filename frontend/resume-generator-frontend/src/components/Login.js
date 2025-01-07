@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './Login.css';
 
@@ -7,6 +8,7 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
+    const navigate = useNavigate(); // React Router's navigate hook
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -25,6 +27,18 @@ const Login = () => {
 
     return (
         <div className="background-container">
+            {/* Navigation Bar */}
+            <div className="nav-bar">
+                <span className="nav-title">The Resume Builder</span>
+                <button
+                    className="signup-button"
+                    onClick={() => navigate('/register')} // Navigate to the Register page
+                >
+                    Sign Up
+                </button>
+            </div>
+
+            {/* Login Form */}
             <div className="login-container">
                 <h2>Login</h2>
                 <form onSubmit={handleLogin}>

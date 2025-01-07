@@ -1,0 +1,168 @@
+/* Apply gradient background to the entire page */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f8d7e6, #d9f0ff, #e0c3fc); /* Gradient with three colors */
+    background-size: 400% 400%; /* Smooth gradient transition effect */
+    animation: gradientBG 15s ease infinite; /* Infinite animation for dynamic gradient */
+  }
+  
+  /* Animation for gradient background */
+  @keyframes gradientBG {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  /* Register container styles */
+  .register-container {
+    max-width: 600px; /* Increased width */
+    margin: auto;
+    padding: 30px 40px; /* Adjust padding for balance */
+    background: #ffffff; /* White background for form */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center;
+    animation: fadeIn 0.8s ease; /* Smooth fade-in animation */
+    margin-top: 50px; /* Add some space at the top */
+  }
+  
+  /* Form title styles */
+  h2.register {
+    color: #6f42c1; /* Purple color */
+    margin-bottom: 20px;
+    font-size: 28px;
+  }
+  
+  /* Steps container styles */
+  .steps-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  
+  .step {
+    flex: 1; /* Equal space for each step */
+    text-align: center;
+    font-size: 14px;
+    color: #ccc;
+    position: relative;
+  }
+  
+  .step.active {
+    color: #6f42c1; /* Highlighted color for active step */
+    font-weight: bold;
+  }
+  
+  .step span {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    background: #ccc;
+    color: white;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  .step.active span {
+    background: #6f42c1; /* Highlighted color for active step */
+  }
+  
+  /* Form group styles */
+  .form-step {
+    text-align: left;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #4b4b4b;
+  }
+  
+  input {
+    width: 100%; /* Full width input */
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box; /* Ensure proper box-sizing */
+  }
+  
+  /* Button group styles */
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+  
+  .next-button,
+  .back-button,
+  .register-button {
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  /* Next button styles */
+  .next-button {
+    background-color: #6f42c1; /* Purple */
+    color: white;
+  }
+  
+  .next-button:hover {
+    background-color: #5a379b; /* Darker purple */
+    transform: translateY(-2px); /* Subtle lift effect */
+  }
+  
+  /* Back button styles */
+  .back-button {
+    background-color: #ccc;
+    color: #333;
+  }
+  
+  .back-button:hover {
+    background-color: #bbb;
+    transform: translateY(-2px);
+  }
+  
+  /* Register button styles */
+  .register-button {
+    background-color: #28a745; /* Green */
+    color: white;
+  }
+  
+  .register-button:hover {
+    background-color: #218838; /* Darker green */
+    transform: translateY(-2px);
+  }
+  
+  /* Fade-in animation */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

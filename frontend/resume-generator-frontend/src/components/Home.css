@@ -4,7 +4,7 @@
   text-align: center;
   margin: 0;
   padding: 0;
-  background-image: url('../../public/home_background.jpg');
+  background: linear-gradient(to bottom right, #6f50af, #ff8c42); /* Gradient background */
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -15,7 +15,7 @@
 
 /* Navigation bar styling */
 .nav-bar {
-  background-color: #6f50af;
+  background: rgba(111, 80, 175, 0.9); /* Transparent effect */
   color: white;
   display: flex;
   justify-content: space-between;
@@ -31,12 +31,53 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Navbar title */
+/* Wrapper for the title animation */
 .nav-title {
-  font-size: 22px;
+  font-size: 32px;
   font-weight: bold;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
 }
 
+.nav-title span {
+  display: inline-block;
+  animation: drop-from-top 0.75s ease-out;
+  animation-fill-mode: forwards;
+  transform: translateY(100%);
+  animation-delay: var(--delay);
+  opacity: 0;
+}
+
+.nav-title span:nth-child(1) {
+  --delay: 0s;
+}
+
+.nav-title span:nth-child(2) {
+  --delay: 0.2s;
+}
+
+.nav-title span:nth-child(3) {
+  --delay: 0.4s;
+}
+
+.nav-title span:nth-child(4) {
+  --delay: 0.6s;
+}
+
+/* Fade-in animation */
+@keyframes drop-from-top {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 /* Hamburger menu button */
 .menu-icon {
   background: none;
@@ -52,17 +93,107 @@
 .menu-icon:hover {
   color: #cfcfcf;
 }
+.nav-buttons {
+  display: flex; /* Align buttons in a row */
+  gap: 15px; /* Adjust the spacing between buttons */
+  align-items: center; /* Vertically align the buttons */
+  margin-right: 15px; /* Add some spacing from the right edge */
+}
+
+/* Login button */
+.login-button-home {
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+  text-decoration: none; /* Remove underline from the Link */
+}
+
+.login-button-home:hover {
+  color: rgb(80, 153, 153);
+}
+
+/* Profile icon button */
+.profile-icon {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+  padding: 5px;
+  margin-left: -5px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.profile-icon:hover {
+  color: #cfcfcf;
+}
+
+/* Hamburger menu button */
+.menu-icon {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  margin-right: -5px;
+  transition: color 0.3s ease;
+}
+
+.menu-icon:hover {
+  color: #cfcfcf;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  position: absolute;
+  top: 50px; /* Position below the profile icon */
+  right: 0; /* Align with the profile icon */
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 2000;
+  width: 150px;
+  text-align: left;
+}
+
+.dropdown-item {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  padding: 10px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-decoration: none;
+}
+
+.dropdown-item:hover {
+  background-color: #d4c4c4;
+}
+
+/* Hide the dropdown menu initially */
+.dropdown-menu.hidden {
+  display: none;
+}
 
 /* Sidebar styles */
 .sidebar {
   position: fixed;
-  top: 0;
+  top: 63px;
   right: -360px; /* Initially hidden off the screen */
   width: 300px;
   height: 100%;
-  background-color: white;
+  background: linear-gradient(to bottom right, #ffffff, #e1e1e1); /* Gradient for sidebar */
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-  transition: right 0.3s ease;
+  transition:  0.3s ease;
   z-index: 1000;
   padding: 20px;
   overflow-y: auto;
@@ -71,12 +202,6 @@
 /* Sidebar visible state */
 .sidebar.visible {
   right: 0;
-}
-
-/* Sidebar content spacing */
-.sidebar-content {
-  margin-top: 50px;
-  text-align: left;
 }
 
 /* Sidebar buttons */
@@ -90,11 +215,13 @@
   cursor: pointer;
   margin-bottom: 10px;
   text-align: left;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, background 0.3s ease;
 }
 
 .sidebar-button:hover {
-  color: #0056b3;
+  color: white;
+  background: #6f50af;
+  border-radius: 5px;
 }
 
 /* Form container styling */
@@ -104,7 +231,7 @@
   border: 1px solid #ccc;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.9); /* Transparent white */
   max-width: 500px;
   margin: 20px auto;
   display: none;
@@ -140,7 +267,7 @@ textarea {
 
 textarea {
   resize: none;
-  height: 200px; /* Increased height for textarea */
+  height: 200px;
 }
 
 /* Buttons container */
@@ -183,8 +310,81 @@ textarea {
   background-color: #e1e1e1;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
-/* Additional spacing for textarea in Professional Summary */
-textarea {
-  height: 300px;
+/* Search Section */
+.search-container {
+  display: flex;
+  flex-wrap: wrap; /* Wrap filters to the next line if necessary */
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 20px auto;
+  padding: 15px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 95%;
 }
+
+.search-container input,
+.search-container select {
+  width: 18%; /* Adjust width for consistent alignment */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.search-container select {
+  background-color: #fff;
+}
+
+.search-button {
+  padding: 10px 20px;
+  background-color: #6f50af;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.search-button:hover {
+  background-color: #543b8e;
+}
+
+.inline-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.add-icon,
+.remove-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px; /* Space between the icon and text */
+  /* background-color: #28a745; Green background */
+  color: rgb(146, 55, 55);
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-icon:hover {
+  color: #0056b3;
+}
+
+.remove-icon {
+  color: #dc3545;
+}
+
+.remove-icon:hover {
+  color: #a71d2a;
+}
+
+

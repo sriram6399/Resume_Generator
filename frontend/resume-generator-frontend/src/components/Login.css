@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-image: url('../../public/background.png'); /* Ensure this image is in the public folder */
+  background: linear-gradient(to bottom right, #6f50af, #b788e6, #ffffff); /* Gradient overlay and image */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -14,19 +14,21 @@
 .login-container {
   max-width: 400px;
   padding: 30px;
-  background-color: #385c6d;
-   /* Makes the login form stand out */
+  background-color: rgba(255, 255, 255, 0.9); /* Light transparent background */
   border: 1px solid #ccc;
   border-radius: 25px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  opacity: 0.75; /* Slight transparency for aesthetics */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+  opacity: 0.95; /* Slight transparency for aesthetics */
 }
 
 h2 {
   text-align: center;
   margin-bottom: 20px;
+  color: #6f50af; /* Matches the nav bar color */
+  font-size: 24px;
 }
 
+/* Form group styles */
 .form-group {
   margin-bottom: 15px;
 }
@@ -35,6 +37,7 @@ label {
   display: block;
   font-weight: bold;
   margin-bottom: 5px;
+  color: #333;
 }
 
 input {
@@ -43,18 +46,47 @@ input {
   margin: 5px 0;
   border: 1px solid #ccc;
   border-radius: 5px;
+  font-size: 14px;
 }
 
+/* Login button styles */
 .login-button {
   width: 100%;
   padding: 11px;
-  background-color:#000;
-  color:#f11a1a;
+  background-color: #6f50af; /* Matches the nav bar color */
+  color: white;
   border: none;
   border-radius: 13px;
   cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .login-button:hover {
-  background-color: #0f0f0c;
+  background-color: #5c3d99; /* Slightly darker for hover effect */
+  transform: translateY(-2px); /* Adds a lift effect */
+}
+.signup-button {
+  padding: 8px 16px; /* Adjusted padding for smaller size */
+  background-color: #b788e6; /* Complementary color */
+  color: white;
+  border: none;
+  border-radius: 8px; /* Slightly less rounded for compactness */
+  cursor: pointer;
+  font-size: 14px; /* Reduced font size for better fit */
+  font-weight: bold;
+  margin: 0 25px; /* Add space on both sides */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  white-space: nowrap;
+}
+
+.signup-button:hover {
+  background-color: #9e6fd8; /* Slightly darker for hover effect */
+  transform: translateY(-2px); /* Adds a lift effect */
+}
+
+/* For better text alignment and spacing */
+h2, .form-group, .login-button, .signup-button {
+  text-align: center;
 }
